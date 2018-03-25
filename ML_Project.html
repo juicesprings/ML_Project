@@ -1,0 +1,626 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Peer-graded Assignment: Prediction Assignment Writeup</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+h1
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;}
+h2
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h3
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h4
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;}
+h5
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;
+	font-weight:normal;
+	font-style:italic;}
+h6
+	{margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#4F81BD;
+	font-weight:normal;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-link:"Caption Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:18.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:5.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:#4F81BD;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoBibliography, li.MsoBibliography, div.MsoBibliography
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#365F91;}
+p.FirstParagraph, li.FirstParagraph, div.FirstParagraph
+	{mso-style-name:"First Paragraph";
+	margin-top:9.0pt;
+	margin-right:0in;
+	margin-bottom:9.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Compact, li.Compact, div.Compact
+	{mso-style-name:Compact;
+	margin-top:1.8pt;
+	margin-right:0in;
+	margin-bottom:1.8pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Author, li.Author, div.Author
+	{mso-style-name:Author;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	text-align:center;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Abstract, li.Abstract, div.Abstract
+	{mso-style-name:Abstract;
+	margin-top:15.0pt;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Cambria","serif";}
+p.DefinitionTerm, li.DefinitionTerm, div.DefinitionTerm
+	{mso-style-name:"Definition Term";
+	margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+p.Definition, li.Definition, div.Definition
+	{mso-style-name:Definition;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+p.ImageCaption, li.ImageCaption, div.ImageCaption
+	{mso-style-name:"Image Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";
+	font-style:italic;}
+p.Figure, li.Figure, div.Figure
+	{mso-style-name:Figure;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.FigurewithCaption, li.FigurewithCaption, div.FigurewithCaption
+	{mso-style-name:"Figure with Caption";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+span.CaptionChar
+	{mso-style-name:"Caption Char";
+	mso-style-link:Caption;}
+span.VerbatimChar
+	{mso-style-name:"Verbatim Char";
+	mso-style-link:"Source Code";
+	font-family:Consolas;}
+p.SourceCode, li.SourceCode, div.SourceCode
+	{mso-style-name:"Source Code";
+	mso-style-link:"Verbatim Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	background:#F8F8F8;
+	word-break:break-all;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+span.KeywordTok
+	{mso-style-name:KeywordTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.DataTypeTok
+	{mso-style-name:DataTypeTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;}
+span.DecValTok
+	{mso-style-name:DecValTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.BaseNTok
+	{mso-style-name:BaseNTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.FloatTok
+	{mso-style-name:FloatTok;
+	font-family:Consolas;
+	color:#0000CF;
+	background:#F8F8F8;}
+span.ConstantTok
+	{mso-style-name:ConstantTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.CharTok
+	{mso-style-name:CharTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.SpecialCharTok
+	{mso-style-name:SpecialCharTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.StringTok
+	{mso-style-name:StringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.VerbatimStringTok
+	{mso-style-name:VerbatimStringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.SpecialStringTok
+	{mso-style-name:SpecialStringTok;
+	font-family:Consolas;
+	color:#4E9A06;
+	background:#F8F8F8;}
+span.ImportTok
+	{mso-style-name:ImportTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.CommentTok
+	{mso-style-name:CommentTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.DocumentationTok
+	{mso-style-name:DocumentationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.AnnotationTok
+	{mso-style-name:AnnotationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.CommentVarTok
+	{mso-style-name:CommentVarTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.OtherTok
+	{mso-style-name:OtherTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;}
+span.FunctionTok
+	{mso-style-name:FunctionTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.VariableTok
+	{mso-style-name:VariableTok;
+	font-family:Consolas;
+	color:black;
+	background:#F8F8F8;}
+span.ControlFlowTok
+	{mso-style-name:ControlFlowTok;
+	font-family:Consolas;
+	color:#204A87;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.OperatorTok
+	{mso-style-name:OperatorTok;
+	font-family:Consolas;
+	color:#CE5C00;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.BuiltInTok
+	{mso-style-name:BuiltInTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.ExtensionTok
+	{mso-style-name:ExtensionTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.PreprocessorTok
+	{mso-style-name:PreprocessorTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-style:italic;}
+span.AttributeTok
+	{mso-style-name:AttributeTok;
+	font-family:Consolas;
+	color:#C4A000;
+	background:#F8F8F8;}
+span.RegionMarkerTok
+	{mso-style-name:RegionMarkerTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+span.InformationTok
+	{mso-style-name:InformationTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.WarningTok
+	{mso-style-name:WarningTok;
+	font-family:Consolas;
+	color:#8F5902;
+	background:#F8F8F8;
+	font-weight:bold;
+	font-style:italic;}
+span.AlertTok
+	{mso-style-name:AlertTok;
+	font-family:Consolas;
+	color:#EF2929;
+	background:#F8F8F8;}
+span.ErrorTok
+	{mso-style-name:ErrorTok;
+	font-family:Consolas;
+	color:#A40000;
+	background:#F8F8F8;
+	font-weight:bold;}
+span.NormalTok
+	{mso-style-name:NormalTok;
+	font-family:Consolas;
+	background:#F8F8F8;}
+.MsoChpDefault
+	{font-size:12.0pt;
+	font-family:"Cambria","serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#4F81BD" vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>Peer-graded Assignment: Prediction Assignment Writeup</p>
+
+<p class=FirstParagraph><span class=VerbatimChar><span style='font-size:11.0pt'>{r
+setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE)</span></span></p>
+
+<h2><a name=background></a>Background</h2>
+
+<p class=FirstParagraph>Using devices such as Jawbone Up, Nike FuelBand, and
+Fitbit it is now possible to collect a large amount of data about personal
+activity relatively inexpensively. These type of devices are part of the
+quantified self movement - a group of enthusiasts who take measurements about
+themselves regularly to improve their health, to find patterns in their
+behavior, or because they are tech geeks. One thing that people regularly do is
+quantify how much of a particular activity they do, but they rarely quantify how
+well they do it. In this project, your goal will be to use data from
+accelerometers on the belt, forearm, arm, and dumbell of 6 participants. They
+were asked to perform barbell lifts correctly and incorrectly in 5 different
+ways. More information is available from the website here: <a
+href="http://groupware.les.inf.puc-rio.br/har">http://groupware.les.inf.puc-rio.br/har</a>
+(see the section on the Weight Lifting Exercise Dataset).</p>
+
+<h2><a name=data></a>Data</h2>
+
+<p class=FirstParagraph>The training data for this project are available here:</p>
+
+<p class=MsoBodyText><a
+href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv</a></p>
+
+<p class=MsoBodyText>The test data are available here:</p>
+
+<p class=MsoBodyText><a
+href="https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv">https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv</a></p>
+
+<p class=MsoBodyText>The data for this project come from this source: <a
+href="http://groupware.les.inf.puc-rio.br/har">http://groupware.les.inf.puc-rio.br/har</a>.
+##Getting and Cleaning Data</p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Load relevant libraries</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>library(caret)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>library(randomForest)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>library(knitr)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>library(ggplot2)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>library(rpart)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>library(rpart.plot)</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Get Data</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>#
+Download</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>rainUrl &lt;-
+&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&quot;</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>testUrl &lt;-
+&quot;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv&quot;</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'># Load to R</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>trainingData &lt;-
+read.csv(url(trainUrl), na.strings = c(&quot;NA&quot;, &quot;#DIV/0!&quot;,
+&quot;&quot;))</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>testingData &lt;-
+read.csv(url(testUrl), na.strings = c(&quot;NA&quot;, &quot;#DIV/0!&quot;,
+&quot;&quot;))</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Explore</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>dim(trainingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>str(trainingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>head(trainingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>summary(trainingData)</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>dim(testingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>str(testingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>head(testingData)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>summary(testingData)</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Clean</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>#
+Remove bad data</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>trainingData &lt;-
+trainingData[, colSums(is.na(trainingData)) == 0]</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>testingData &lt;-
+testingData[, colSums(is.na(testingData)) == 0]</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'># Remove unrelated
+variables</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>trainingData &lt;-
+trainingData[, -c(1:7)]</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>testingData &lt;-
+testingData[, -c(1:7)]</span></span></p>
+
+<p class=Compact style='margin-left:24.0pt;text-indent:-24.0pt'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Prepare Data</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>#
+partioning the training set into two different dataset</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>traningPartitionData
+&lt;- createDataPartition(trainingData$classe,  p = 0.7, list = F)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>trainingDataSet &lt;-
+trainingData[traningPartitionData, ]</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>testingDataSet &lt;-
+trainingData[-traningPartitionData, ]</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>dim(trainingData);
+dim(testingDataSet)</span></span></p>
+
+<h2><a name=model-1---decision-tree></a>Model 1 - Decision Tree</h2>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>decisionTreeModel
+&lt;- rpart(classe ~ ., data = trainingDataSet, method = &quot;class&quot;)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>decisionTreePrediction
+&lt;- predict(decisionTreeModel, testingDataSet, type = &quot;class&quot;)</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'># Plot Decision Tree</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>rpart.plot(decisionTreeModel,
+main = &quot;Decision Tree&quot;, under = T, faclen = 0)</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'># Using confusion
+matrix to test results</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>confusionMatrix(decisionTreePrediction,
+testingDataSet$classe)</span></span></p>
+
+<h2><a name=model-2---random-forest></a>Model 2 - Random Forest</h2>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>randomForestModel
+&lt;- randomForest(classe ~. , data = trainingDataSet, method =
+&quot;class&quot;)</span></span><br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>randomForestPrediction
+&lt;- predict(randomForestModel, testingDataSet, type = &quot;class&quot;)</span></span><br>
+<br>
+<span class=VerbatimChar><span style='font-size:11.0pt'>confusionMatrix(randomForestPrediction,
+testingDataSet$classe)</span></span></p>
+
+<h2><a name=conclusion></a>Conclusion</h2>
+
+<p class=FirstParagraph>Rndom Forest model, accuracy is 0.9988 which is better
+than Classification Tree model which is 0.6612</p>
+
+<p class=SourceCode><span class=VerbatimChar><span style='font-size:11.0pt'>predictionFinal
+&lt;- predict(randomForestModel, testingDataSet, type = &quot;class&quot;)</span></span></p>
+
+</div>
+
+</body>
+
+</html>
